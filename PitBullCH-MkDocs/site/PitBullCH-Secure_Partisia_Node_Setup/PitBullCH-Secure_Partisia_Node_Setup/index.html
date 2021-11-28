@@ -1,0 +1,1316 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+    
+    
+      
+        <title>Secure Partisia Node Setup - PitBullCH @ Kruptos Nomisma</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kruptos-nomisma-presents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PitBullCH @ Kruptos Nomisma" class="md-header__button md-logo" aria-label="PitBullCH @ Kruptos Nomisma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PitBullCH @ Kruptos Nomisma
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Secure Partisia Node Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PitBullCH @ Kruptos Nomisma" class="md-nav__button md-logo" aria-label="PitBullCH @ Kruptos Nomisma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PitBullCH @ Kruptos Nomisma
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PitBullCH-Secure_VPS_Setup_for_Blockchain/PitBullCH-Secure_VPS_Setup_for_Blockchain/" class="md-nav__link">
+        Secure VPS Setup for Blockchain
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Secure Partisia Node Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Secure Partisia Node Setup
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-testnet-agreement" class="md-nav__link">
+    Sign Testnet Agreement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey" class="md-nav__link">
+    Node Operator Survey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-1" class="md-nav__link">
+    Node Operator Survey - Page 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-2" class="md-nav__link">
+    Node Operator Survey - Page 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-keys-addresses" class="md-nav__link">
+    Generate Keys &amp; Addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-3" class="md-nav__link">
+    Node Operator Survey - Page 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-4" class="md-nav__link">
+    Node Operator Survey - Page 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-ethereum-endpoint" class="md-nav__link">
+    Generate Ethereum Endpoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-blockchain-directories" class="md-nav__link">
+    Create Blockchain Directories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-blockchain-genesis-file" class="md-nav__link">
+    Create Blockchain Genesis File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-blockchain-configuration-file" class="md-nav__link">
+    Create Blockchain Configuration File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-docker-compose-file" class="md-nav__link">
+    Create Docker Compose File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-partisia-network-ports" class="md-nav__link">
+    Enable Partisia Network Ports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-docker-login" class="md-nav__link">
+    Perform Docker Login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-partisia-node" class="md-nav__link">
+    Start Partisia Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-partisia-logs" class="md-nav__link">
+    View Partisia Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop-partisia-node" class="md-nav__link">
+    Stop Partisia Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-partisia-node-optional" class="md-nav__link">
+    Restart Partisia Node (optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-automatic-docker-restarts" class="md-nav__link">
+    Enable Automatic Docker Restarts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-test-net-updates" class="md-nav__link">
+    Configure Test-Net Updates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggestions" class="md-nav__link">
+    Suggestions ?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-testnet-agreement" class="md-nav__link">
+    Sign Testnet Agreement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey" class="md-nav__link">
+    Node Operator Survey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-1" class="md-nav__link">
+    Node Operator Survey - Page 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-2" class="md-nav__link">
+    Node Operator Survey - Page 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-keys-addresses" class="md-nav__link">
+    Generate Keys &amp; Addresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-3" class="md-nav__link">
+    Node Operator Survey - Page 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-operator-survey-page-4" class="md-nav__link">
+    Node Operator Survey - Page 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-ethereum-endpoint" class="md-nav__link">
+    Generate Ethereum Endpoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-blockchain-directories" class="md-nav__link">
+    Create Blockchain Directories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-blockchain-genesis-file" class="md-nav__link">
+    Create Blockchain Genesis File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-blockchain-configuration-file" class="md-nav__link">
+    Create Blockchain Configuration File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-docker-compose-file" class="md-nav__link">
+    Create Docker Compose File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-partisia-network-ports" class="md-nav__link">
+    Enable Partisia Network Ports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-docker-login" class="md-nav__link">
+    Perform Docker Login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-partisia-node" class="md-nav__link">
+    Start Partisia Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-partisia-logs" class="md-nav__link">
+    View Partisia Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop-partisia-node" class="md-nav__link">
+    Stop Partisia Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-partisia-node-optional" class="md-nav__link">
+    Restart Partisia Node (optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-automatic-docker-restarts" class="md-nav__link">
+    Enable Automatic Docker Restarts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-test-net-updates" class="md-nav__link">
+    Configure Test-Net Updates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggestions" class="md-nav__link">
+    Suggestions ?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="kruptos-nomisma-presents">Kruptos Nomisma presents...</h1>
+<p><img alt="" src="../images/Node-CoverImage.png" /></p>
+<h2 id="introduction">Introduction</h2>
+<ol>
+<li>
+<p>This guide assumes a few important things about your VPS:</p>
+<ul>
+<li>
+<p>You are using Contabo as your VPS provider – if using another provider there may be subtle differences in terms of what is or is not already installed !</p>
+</li>
+<li>
+<p>Instructions intended to be run on a certain platform will be preceded with the following words:</p>
+<ul>
+<li>
+<p><strong>On Mac</strong> - this is for running on Mac only</p>
+</li>
+<li>
+<p><strong>On Windows</strong> - this is for running on Windows only</p>
+</li>
+<li>
+<p><strong>On Mac / Windows</strong> - this is for running on Mac or Windows (as appropriate for your situation)</p>
+</li>
+<li>
+<p><strong>On VPS</strong> - this is for running on VPS only</p>
+</li>
+</ul>
+</li>
+<li>
+<p>You will access your VPS over a command-line terminal:</p>
+<ul>
+<li>
+<p><strong>On Mac</strong> this would be the default Terminal app, or better, the 3rd-party iTerm2 app</p>
+</li>
+<li>
+<p><strong>On Windows</strong> this would be the default Command Prompt or PowerShell, or perhaps, the 3rd-party Putty app</p>
+</li>
+</ul>
+</li>
+<li>
+<p>You understand that Partisia node logs on the VPS will use the UTC time-zone for timestamps and thus log times may be some hours in front of or behind your own local time – this is because time under UTC never changes through daylight savings time so gives full consistency and continuity</p>
+</li>
+<li>
+<p>I will use <em>yourUsername</em> and <em>yourGroupname</em> in my examples - you will need to replace these appropriately with your own values</p>
+</li>
+</ul>
+</li>
+<li>
+<p>This guide assumes a few important things about you and Linux:</p>
+<ul>
+<li>
+<p>You are using the Linux Ubuntu distro v20.04 (not earlier) – other distros will work, but there may be subtle differences which you will have to work out yourself !</p>
+</li>
+<li>
+<p>You may not have too much Unix / Linux experience and you may find some part of this guide a little daunting, but you are NOT afraid to make mistakes and start all over again, and you are NOT afraid to ask questions</p>
+</li>
+<li>
+<p>You should ideally be familiar with one of the usual Unix / Linux command-line editors – I have used <em>nano</em> in all examples as it is more intuitive and user friendly, but please feel free to use <em>vi</em> if you are more comfortable with that</p>
+</li>
+</ul>
+</li>
+<li>
+<p>A few important words on security:</p>
+<ul>
+<li>
+<p>Store your most critical &amp; private items relating to a blockchain node securely &amp; safely – preferably in a password manager (1Password, Bitwarden, KeePassXC all recommended) – means wallet private keys, login passwords (root and non-root) and SSH keys:</p>
+<ul>
+<li>
+<p>Store with them your node wallet address &amp; VPS IP address because you will need these - keeping them together makes it easier later</p>
+</li>
+<li>
+<p>Store the emergency VPS VNC IP address, username, and password from your VPS provider – you may need them if things go wrong</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SSH is critical for the security of your VPS - do not skip the setup of this</p>
+</li>
+</ul>
+</li>
+<li>
+<p>One final thing: although I am experienced on node setups, I do not consider myself an expert – there are thousands of people with more clue than I, and probably similar Partisia node setup guides which are much more comprehensive than this – but this one does the job for me ;-)</p>
+</li>
+</ol>
+<p>Intro over – now let us get down to the good stuff, and in the words of the late, great Douglas Adams: <strong>Don’t Panic !</strong></p>
+<h2 id="sign-testnet-agreement">Sign Testnet Agreement</h2>
+<ol>
+<li>
+<p>Signing the Testnet Agreemnet is a pre-requisite to getting access to the Partisia GitLab repository: without this the node cannot function - so DM <em>@bryanpartisia</em> in Discord with the following information and asking for the Testnet Agreement:</p>
+</li>
+<li>
+<p><strong>Full Name</strong> as stated on the official ID that you used for KYC</p>
+</li>
+<li>
+<p><strong>Email Address</strong> that you used for KYC</p>
+</li>
+<li>
+<p><strong>Residential Address</strong> that you used for KYC</p>
+</li>
+<li>
+<p>You will receive the Testnet Agreement via the <em>HelloSign</em> facility - the email will be from Partisia Blockchain (<em>noreply@mail.hellosign.com</em>) - review this carefully and sign it, it will be send back to Partisia automatically. The email looks like this:</p>
+<p><img alt="" src="../images/Node-TestnetAgreement-1.png" /></p>
+</li>
+<li>
+<p>You will then receive via the <em>HelloSign</em> facility a copy of the signed agreement - again the email will be from HelloSign (<em>noreply@mail.hellosign.com</em>) - make sure to story this safely. The email looks like this:</p>
+<p><img alt="" src="../images/Node-TestnetAgreement-2.png" /></p>
+</li>
+</ol>
+<h2 id="node-operator-survey">Node Operator Survey</h2>
+<ol>
+<li>
+<p>Within a day or two of the above, you will receive via email an invite from <em>Peter Frandsen</em> to undertake a Node Operator Survey - the email will be from Node Vetting (<em>partisia-xxxxxxxxx@survey.au.dk</em> - where <em>xxxxxxxxx</em> is a random number) and this survey is critical as it is used to inform Partisia regarding your public addresses &amp; keys). The email looks like this:</p>
+<p><img alt="" src="../images/Node-NodeOperatorSurveyInvite.png" /></p>
+<p><em>Note: the 12-character Survey Key in the email is unique to you, and must not be shared with others - this is critical as any leakage could result in your node being compromised</em></p>
+</li>
+</ol>
+<h2 id="node-operator-survey-page-1">Node Operator Survey - Page 1</h2>
+<ol>
+<li>
+<p>For the first page of the Survey you only need to fill in the USD value of your Partisia investment, and indicate your level of experise with respect to operating blockchain node:</p>
+<p><img alt="" src="../images/Node-NodeOperatorSurvey-1.png" /></p>
+</li>
+<li>
+<p>Hit <em>naeste</em> (next) to continue...</p>
+<p><em>Note: Do not be too worried about your level of technical expertise - as long as you have the aptitude and willingness to learn, the Discord-based Node Operator community will be there to help you !</em></p>
+</li>
+</ol>
+<h2 id="node-operator-survey-page-2">Node Operator Survey - Page 2</h2>
+<ol>
+<li>
+<p>For the second page of the Survey I would advise to answer the same as below, other than adjusting your answer for the second question depending on your own circumstances:</p>
+<p><img alt="" src="../images/Node-NodeOperatorSurvey-2.png" /></p>
+</li>
+<li>
+<p>Hit <em>naeste</em> (next) to continue...</p>
+</li>
+</ol>
+<h2 id="generate-keys-addresses">Generate Keys &amp; Addresses</h2>
+<ol>
+<li>
+<p>Before filling in the next page, in another browser window go the key generator website to generate the various required sets of keys &amp; addresses:</p>
+<p><a href="">https://dashboard.partisiablockchain.com/keygen</a></p>
+</li>
+<li>
+<p>It will look like this (FYI the keys you see here were discarded, they were never used):</p>
+<p><img alt="" src="../images/Node-KeygenSite.png" /></p>
+<ul>
+<li>
+<p>There are two sections:</p>
+<ul>
+<li>
+<p><strong>Upper section</strong> comprises a private / public keypair plus the associated blockchain address</p>
+</li>
+<li>
+<p><strong>Lower section</strong> comprises just a BLS Producer private / public keypair</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Each time you hit the <em>Generate</em> button, it generates new entries in both sections. Note however that the upper and lower sections are completely independent of each other, so you could take the entries from one of the sections now, hit <em>Generate</em> as many times as you like then take the entries from the other section - and that is perfectly fine !</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In total you need three sets of entries from the upper section, and one from the lower section - as follows:</p>
+<ul>
+<li>
+<p>For the first set (from the <strong>upper section</strong>):</p>
+<ul>
+<li>
+<p>If you are still confident that the keypair / address from your KYC / Sale keygen session are secure and valid then you can use these...</p>
+</li>
+<li>
+<p>Otherwise generate now a new set (in this case, you will need to inform <em>@bryanpartisia</em> before TGE about the new blockchain address)</p>
+</li>
+<li>
+<p>Regardless: you have a <strong>KYC / Sale private key</strong> (key #1), <strong>KYC / Sale public key</strong> (key #2), and <strong>KYC / Sale blockchain address</strong> (address #3)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Then for the second set (from the <strong>upper section</strong>):</p>
+<ul>
+<li>
+<p>You could use the keypair / address from your Test-Net Baker node if you have them (though I would advise to keep those purely for Test-net activities)...</p>
+</li>
+<li>
+<p>Otherwise generate now a new set</p>
+</li>
+<li>
+<p>Regardless: you have a <strong>Block Producer private key</strong> (key #4), <strong>Block Producer public key</strong> (key #5), and <strong>Block Producer blockchain address</strong> (address #6)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Then for the third set (from the <strong>upper section</strong>):</p>
+<ul>
+<li>
+<p>You probably don't already have any existing ones to use for this, so just generate a new set</p>
+</li>
+<li>
+<p>You now have a <strong>Node Operator private key</strong> (key #7), <strong>Node Operator public key</strong> (key #8), and <strong>Node Operator blockchain address</strong> (address #9)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Finally for the fourth set (from the <strong>lower section</strong>):</p>
+<ul>
+<li>
+<p>You don't already have any existing ones to use for this, so just generate a new set</p>
+</li>
+<li>
+<p>You now have a <strong>BLS Producer private key</strong> (key #10) and <strong>BLS Producer public key</strong> (key #11)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Make sure you keep all these safely and securely in your password manager or whatever you use for safe storage of your crypto keys</p>
+</li>
+<li>
+<p>As FYI:</p>
+<ul>
+<li>
+<p>Private keys (key #1, #4, #7) are all 64 hex characters long</p>
+</li>
+<li>
+<p>Public keys (key #2, #5, #8) are 66 hex characters long</p>
+</li>
+<li>
+<p>Blockchain (address #3, #7, #9) addresses are 42 hex characters long</p>
+</li>
+<li>
+<p>BLS Producer private keys (key #10) are 64 hex characters long</p>
+</li>
+<li>
+<p>BLS Producer public keys (key #11) are 192 hex characters long</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="node-operator-survey-page-3">Node Operator Survey - Page 3</h2>
+<ol>
+<li>
+<p>Now fill in page 3 of the Node Operator Survey as shown below, using information from the previous section:</p>
+<p><img alt="" src="../images/Node-NodeOperatorSurvey-3.png" /></p>
+</li>
+<li>
+<p>Hit <em>naeste</em> (next) to continue...</p>
+</li>
+</ol>
+<h2 id="node-operator-survey-page-4">Node Operator Survey - Page 4</h2>
+<ol>
+<li>
+<p>Nothing to do here other than hit <em>afslut</em> (finish) to submit the Node Operator Survey   </p>
+<p><img alt="" src="../images/Node-NodeOperatorSurvey-4.png" /></p>
+</li>
+<li>
+<p>Note that you can re-visit this survey and updates entries - for example if you need to change your VPS server IP address, website URL etc</p>
+</li>
+</ol>
+<h2 id="generate-ethereum-endpoint">Generate Ethereum Endpoint</h2>
+<ol>
+<li>
+<p>An Ethereum Endpoint is needed to facilitate BYOC token exchange with the Ethereum blockchain - in this case a <em>Ropsten</em> Test-net endpoint is needed (an Ethereum Main-net endpoint will be needed for PBC Main-net when that is ready to go live)</p>
+</li>
+<li>
+<p>There are several companies that offer this, all for free within certain usage limits (which are not expected to be breached with PBC): <a href="https://www.alchemy.com/supernode">Alchemy.com</a>, <a href="https://infura.io/product/ethereum">Infura.io</a>, <a href="https://moralis.io/speedy-nodes/">Moralis.io</a> or <a href="https://zmok.io">Zmok.io</a></p>
+</li>
+<li>
+<p>Infura is probably the most commonly used, and is a simple sign-up (see this <a href="https://blog.infura.io/getting-started-with-infura-28e41844cc89/">tutorial</a>) - you need to record the https <em>Ropsten</em> endpoint details</p>
+<ul>
+<li>
+<p>Infura's <em>Ropsten</em> endpoint will looks something like the following (where the 32 hex character string is your Infura <em>project ID</em>):</p>
+<p><em>https://ropsten.infura.io/v3/0123456789abcdef9876543210fedcba</em></p>
+</li>
+<li>
+<p>Make sure also to set up 2FA with your Infura account</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Sometimes such endpoint providers do have extended outages, so it can be useful to have an account with a second such provider and have their endpoint details recorded so you can swap if needed</p>
+</li>
+</ol>
+<h2 id="create-blockchain-directories">Create Blockchain Directories</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> for best security you should not use <em>root</em> as your default user – far better to create a non-root user based on the project name e.g., <em>partisia</em> or your own name or nickname - but it should ideally be the same non-root user you used to set up the VPS</p>
+</li>
+<li>
+<p><strong>On VPS</strong> create the configuration and storage directories needed for the Partisia node, and give them appropriate ownership and permissions:</p>
+<div class="highlight"><pre><span></span><code>sudo mkdir -p /opt/pbc-betanet/conf /opt/pbc-betanet/storage
+cd /opt
+sudo find ./pbc-betanet -exec chown yourUsername:yourGroupname {} \;
+sudo find ./pbc-betanet -exec chmod go-rwx {} \;
+</code></pre></div>
+<p><em>Note: remember to appropriately replace yourUsername &amp; yourGroupname in the above</em></p>
+</li>
+<li>
+<p><strong>On VPS</strong> for checking purposes, display the directories - they should look like this:</p>
+<div class="highlight"><pre><span></span><code>pwd
+ls -ad pbc-betanet
+ls -al pbc-betanet
+</code></pre></div>
+<p><img alt="" src="../images/Node-BlockchainDirectories.png" /></p>
+</li>
+</ol>
+<h2 id="create-blockchain-genesis-file">Create Blockchain Genesis File</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> the Genesis file defines the initial state of the Partisia blockchain – first create the file:</p>
+<div class="highlight"><pre><span></span><code>cd /opt/pbc-betanet/conf
+nano genesis.json
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then add the following content to that file:</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;chainId&quot;: &quot;PARTISIA beta net with accounts&quot;,
+    &quot;rootAccount&quot;: &quot;00047a53311c64239ecdc70ff5bbfd769175b64df0&quot;
+}
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> give that file appropriate permissions:</p>
+<div class="highlight"><pre><span></span><code>chmod 600 genesis.json
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> for checking purposes, display that file - it should look like this:</p>
+<div class="highlight"><pre><span></span><code>pwd
+ls -al genesis.json
+cat genesis.json
+</code></pre></div>
+<p><img alt="" src="../images/Node-GenesisFile.png" /></p>
+</li>
+</ol>
+<h2 id="create-blockchain-configuration-file">Create Blockchain Configuration File</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> the blockchain data needs to be stored locally – first create the file:</p>
+<div class="highlight"><pre><span></span><code>cd /opt/pbc-betanet/conf
+nano config.json
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then add the following content to that file:</p>
+<div class="highlight"><pre><span></span><code>{
+  &quot;restPort&quot;: 8080,
+  &quot;floodingPort&quot;: 9888,
+  &quot;networkKey&quot;: &quot;Block Producer private key (#4)&quot;,
+  &quot;producerConfig&quot;: {
+    &quot;accountKey&quot;: &quot;Node Operator private key (#7)&quot;,
+    &quot;finalizationKey&quot;: &quot;BLS Producer private key (#10)&quot;,
+    &quot;ethereumUrl&quot;: &quot;ETHEREUM_ROPSTEN_HTTPS_ENDPOINT&quot;
+  },
+  &quot;knownPeers&quot;: [
+    &quot;188.180.83.49:9090&quot;,
+    &quot;188.180.83.49:9190&quot;,
+    &quot;188.180.83.49:9290&quot;,
+    &quot;188.180.83.49:9390&quot;,
+    &quot;174.138.2.217:9888&quot;,
+    &quot;172.93.110.125:9888&quot;,
+    &quot;107.189.1.171:9888&quot;,
+    &quot;176.78.42.5:9888&quot;
+  ]
+}
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> referring back to the <em>Generate Keys &amp; Addresses</em> section:</p>
+<ul>
+<li>
+<p>Replace <em>Block Producer private key (#4)</em> in this file with your actual hex key <em>Block Producer private key</em> (key #4)</p>
+</li>
+<li>
+<p>Replace <em>Node Operator private key (#7)</em> in this file with your actual hex key <em>Node Operator private key</em> (key #7)</p>
+</li>
+<li>
+<p>Replace <em>BLS Producer private key (#10)</em> in this file with your actual hex jey <em>BLS Producer private key</em> (key #10)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>On VPS</strong> referring back to the <em>Generate Ethereum Endpoint</em> section:</p>
+<ul>
+<li>Replace <em>ETHEREUM_ROPSTEN_HTTPS_ENDPOINT</em> in this file with your actual Ropsten URL (starying <em>https://ropsten...</em>)</li>
+</ul>
+</li>
+<li>
+<p><strong>On VPS</strong> give that file appropriate permissions:</p>
+<div class="highlight"><pre><span></span><code>chmod 600 config.json
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> for checking purposes, display that file - it should look like this:</p>
+<div class="highlight"><pre><span></span><code>pwd
+ls -al config.json
+cat config.json
+</code></pre></div>
+<p><img alt="" src="../images/Node-ConfigFile.png" /></p>
+</li>
+</ol>
+<h2 id="create-docker-compose-file">Create Docker Compose File</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> create a directory for the Partisia Docker file, and create the file:</p>
+<div class="highlight"><pre><span></span><code>cd
+mkdir partisia
+chmod 700 partisia
+cd partisia
+nano docker-compose.yml
+</code></pre></div>
+</li>
+<li>
+<p>On VPS check for your User ID (UID) and Group ID (GID):</p>
+<p><div class="highlight"><pre><span></span><code>id
+</code></pre></div>
+Output should be similar to this, which shows UID = 1001, and GID = 1001:</p>
+<p><img alt="" src="../images/Node-ID.png" />    </p>
+</li>
+<li>
+<p><strong>On VPS</strong> then add the following content to that file:</p>
+<div class="highlight"><pre><span></span><code>pbc-betanet-reader:
+  image: registry.gitlab.com/privacyblockchain/demo/betanet-public:latest
+  container_name: pbc-betanet-reader
+  user: &quot;1001:1001&quot;
+  restart: always
+  expose:
+    - &quot;8080&quot;
+  ports:
+    - &quot;9888-9897:9888-9897&quot;
+  command: [ &quot;/conf/config.json&quot;, &quot;/conf/genesis.json&quot;, &quot;/storage/&quot; ]
+  volumes:
+    - /opt/pbc-betanet/conf:/conf
+    - /opt/pbc-betanet/storage:/storage
+  environment:
+    JAVA_TOOL_OPTIONS: &quot;-Xmx2G&quot;
+</code></pre></div>
+<p><em>Note: remember to appropriately replace UID 1001 and GID 1001 in the above</em></p>
+</li>
+<li>
+<p><strong>On VPS</strong> give that file appropriate permissions:</p>
+<div class="highlight"><pre><span></span><code>chmod 600 docker-compose.yml
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> for checking purposes, display that file - it should look like this:   </p>
+<div class="highlight"><pre><span></span><code>pwd
+ls -al docker-compose.yml
+cat docker-compose.yml
+</code></pre></div>
+<p><img alt="" src="../images/Node-DockerComposeFile.png" /></p>
+</li>
+</ol>
+<h2 id="enable-partisia-network-ports">Enable Partisia Network Ports</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> allow the ports for Partisia (9888 - 9897) and check the firewall status:</p>
+<div class="highlight"><pre><span></span><code>sudo ufw allow 9888:9897/tcp
+sudo ufw reload
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> for checking purposes, display the firewall status - it should look like this:   </p>
+<div class="highlight"><pre><span></span><code>sudo ufw status
+</code></pre></div>
+<p><img alt="" src="../images/Node-FirewallStatus.png" /></p>
+</li>
+</ol>
+<h2 id="perform-docker-login">Perform Docker Login</h2>
+<ol>
+<li>
+<p><strong>On Mac / Windows</strong> if you did not set up 2FA for GitLab access when you registered on GitLab you can skip this step and go to step #2 below – otherwise access the URL below, fill in the personal access token name (e.g., partisia), tick the api box (for full API access), and store the resultant personal access token carefully in your password manager or similar:</p>
+<p><a href="">https://gitlab.com/-/profile/personal_access_tokens</a></p>
+</li>
+<li>
+<p><strong>On VPS</strong> now perform the Docker login to the GitLab API – you will need to provide your GitLab-registered email address, plus either your GitLab password or (if you did set up 2FA) your personal access token:</p>
+<div class="highlight"><pre><span></span><code>docker logout
+docker login -u yourEmailAddress registry.gitlab.com
+</code></pre></div>
+</li>
+</ol>
+<h2 id="start-partisia-node">Start Partisia Node</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> first pull the Partisia node image into a Docker container:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd partisia
+docker-compose pull
+</code></pre></div>
+<p><em>Note: do this anytime you stop/start the node to ensure you are always using the latest image</em></p>
+</li>
+<li>
+<p><strong>On VPS</strong> now start the Partisia node within Docker:</p>
+<p><div class="highlight"><pre><span></span><code>docker-compose up -d
+</code></pre></div>
+<em>Note: the -d argument ensures the container is started in the background, which allows you to disconnect from the VPS without killing the container</em></p>
+</li>
+</ol>
+<h2 id="view-partisia-logs">View Partisia Logs</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> view the Docker logs to see the Partisia node progress</p>
+<ul>
+<li>
+<p>On Test-net the container is called pbc-betanet-reader (on Main-net it may be called something different, so expect to adjust this later):</p>
+<div class="highlight"><pre><span></span><code>docker logs -f pbc-betanet-reader
+</code></pre></div>
+</li>
+<li>
+<p>If the node has been running a long time, it can take many minutes to catch up through all the logs - in this case use the <em>--tail</em> argument to grab the last e.g. 1000 logs only:</p>
+<div class="highlight"><pre><span></span><code>docker logs --tail 1000 -f pbc-betanet-reader
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Refer to Discord for an explanation of what the various logs mean - however at a high level, if there is a regular sequence of Handling / Signing / Executing logs with incrementing block numbers, this is generally a sign the node is working correctly</p>
+</li>
+</ol>
+<h2 id="stop-partisia-node">Stop Partisia Node</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> whenever needed, stop the Partisia node and remove the image from Docker:</p>
+<div class="highlight"><pre><span></span><code>docker-compose down
+</code></pre></div>
+</li>
+</ol>
+<h2 id="restart-partisia-node-optional">Restart Partisia Node (optional)</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> this sequence pulls a fresh Partisia image (only if there is one) and performs a fresh start - this should be the normal operational restart sequence as it does not cause any downtime unless there is a fresh Partisia image:</p>
+<div class="highlight"><pre><span></span><code>docker-compose pull
+docker-compose up -d
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> this sequence performs a hard stop (stops &amp; removes the Partisia image) then pulls a fresh Partisia image and performs a fresh start - this can be a good procedure to follow after a VPS reboot:</p>
+<div class="highlight"><pre><span></span><code>docker-compose down
+docker-compose pull
+docker-compose up -d
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> this sequence performs a simple stop &amp; start without removing the Partisia image - if any changes made to the <em>docker-compose.yml</em> file after stopping, these <em>will</em> be used during the start:</p>
+<div class="highlight"><pre><span></span><code>docker-compose stop
+docker-compose start
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> this sequence performs a simple restart of the Partisia image - if any changes made to the <em>docker-compose.yml</em> file before restarting, these will <em>not</em> be used during the restart:</p>
+<div class="highlight"><pre><span></span><code>docker-compose restart
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> although not strictly a restart sequence <em>per se</em>; this sequence performs a pause, and when needed, an unpause (i.e. resumption) of the Partisia image - this can be useful when trying to diagnose unrelated issues with the VPS:</p>
+<div class="highlight"><pre><span></span><code>docker-compose pause
+docker-compose unpause
+</code></pre></div>
+</li>
+</ol>
+<h2 id="enable-automatic-docker-restarts">Enable Automatic Docker Restarts</h2>
+<ol>
+<li>
+<p>On VPS ensure that Docker always restarts automatically after any sort of planned or unplanned VPS outage:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl enable docker
+sudo systemctl daemon-reload
+</code></pre></div>
+</li>
+</ol>
+<h2 id="configure-test-net-updates">Configure Test-Net Updates</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> the current requirement <em>on Test-net only</em> is to perform a Partisia node restart every 30 minutes because of the frequent updates being deployed to Test-net - this allows the node to pick up those updates quickly</p>
+</li>
+<li>
+<p><strong>On VPS</strong> create an update script file:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd partisia
+nano update_node.sh
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then add the following content to that script file:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+DATETIME=`/usr/bin/date -u`
+echo &quot;$DATETIME&quot;
+
+cd /home/yourUsername/partisia
+
+/usr/local/bin/docker-compose pull
+/usr/local/bin/docker-compose up -d
+</code></pre></div>
+<p><em>Note: remember to appropriately replace yourUsername in the above</em></p>
+</li>
+<li>
+<p><strong>On VPS</strong> give that script file appropriate permissions:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd partisia
+chmod 700 update_node.sh
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> run that script manually, ensuring it executes as expected without any errors (do not go on to next step until all errors are fixed):</p>
+<div class="highlight"><pre><span></span><code>cd
+cd partisia
+./update_node.sh
+</code></pre></div>
+<p><em>Note: errors with this script are usually down to using the wrong directory for the cd command, or some issue with the docker-compose command not being in the expected location</em></p>
+</li>
+<li>
+<p><strong>On VPS</strong> now create a <em>crontab</em> entry:</p>
+<div class="highlight"><pre><span></span><code>crontab -e
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then add the following content to that file to run that script every 30 minutes, piping standard output and errors to a log file in the same directory:</p>
+<div class="highlight"><pre><span></span><code>*/30 * * * * /home/yourUsername/partisia/update_node.sh &gt; /home/yourUsername/partisia/update_node.log 2&gt;&amp;1
+</code></pre></div>
+<p><em>Note: remember to appropriately replace yourUsername twice in the above</em></p>
+</li>
+<li>
+<p><strong>On VPS</strong> once that script has run, view the update logs using:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd partisia
+cat update_node.log
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code>cat /home/yourUsername/partisia/update_node.log
+</code></pre></div>
+<p><em>Note: remember to appropriately replace yourUsername in the above</em></p>
+</li>
+</ol>
+<h2 id="suggestions">Suggestions ?</h2>
+<p>Any errors or suggestions for content to be added - please email me at <em>pitbullch@pitbullch.com</em>, or DM me on Discord or Telegram as <em>@PitBullCH</em>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../PitBullCH-Secure_VPS_Setup_for_Blockchain/PitBullCH-Secure_VPS_Setup_for_Blockchain/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Secure VPS Setup for Blockchain" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Secure VPS Setup for Blockchain
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              About
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      
+    
+  </body>
+</html>

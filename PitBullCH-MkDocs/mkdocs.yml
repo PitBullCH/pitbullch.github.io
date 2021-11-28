@@ -1,0 +1,12 @@
+site_name: PitBullCH @ Kruptos Nomisma
+nav:
+    - 'Secure VPS Setup for Blockchain': PitBullCH-Secure_VPS_Setup_for_Blockchain/PitBullCH-Secure_VPS_Setup_for_Blockchain.md
+    - 'Secure Partisia Node Setup': PitBullCH-Secure_Partisia_Node_Setup/PitBullCH-Secure_Partisia_Node_Setup.md
+    - 'About': about.md
+
+theme:
+  name: material
+
+markdown_extensions:
+    - pymdownx.superfences
+    - pymdownx.keys

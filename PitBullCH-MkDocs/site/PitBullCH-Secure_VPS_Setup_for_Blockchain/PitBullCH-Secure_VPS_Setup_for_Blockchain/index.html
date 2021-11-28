@@ -1,0 +1,1161 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+    
+    
+      
+        <title>Secure VPS Setup for Blockchain - PitBullCH @ Kruptos Nomisma</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kruptos-nomisma-presents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PitBullCH @ Kruptos Nomisma" class="md-header__button md-logo" aria-label="PitBullCH @ Kruptos Nomisma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PitBullCH @ Kruptos Nomisma
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Secure VPS Setup for Blockchain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PitBullCH @ Kruptos Nomisma" class="md-nav__button md-logo" aria-label="PitBullCH @ Kruptos Nomisma" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PitBullCH @ Kruptos Nomisma
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Secure VPS Setup for Blockchain
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Secure VPS Setup for Blockchain
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-diagram" class="md-nav__link">
+    Network Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-new-root-password" class="md-nav__link">
+    Set New Root Password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-emergency-window-critical" class="md-nav__link">
+    Open Emergency Window (Critical !!!)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-non-root-user" class="md-nav__link">
+    Set Up Non-Root User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-ssh-for-secure-connections" class="md-nav__link">
+    Set Up SSH For Secure Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-ubuntu" class="md-nav__link">
+    Update Ubuntu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-ntp-network-time-protocol" class="md-nav__link">
+    Install NTP (Network Time Protocol)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-fail2ban" class="md-nav__link">
+    Install Fail2Ban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-firewall" class="md-nav__link">
+    Set Up The Firewall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-webmin" class="md-nav__link">
+    Install Webmin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-docker-docker-compose" class="md-nav__link">
+    Install Docker &amp; Docker-Compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-mail-utilities" class="md-nav__link">
+    Install Mail Utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-bashtop" class="md-nav__link">
+    Install Bashtop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-vps-maintenance-critical" class="md-nav__link">
+    Appendix A - VPS Maintenance (Critical !!!)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-vps-control-from-a-secondary-device" class="md-nav__link">
+    Appendix B - VPS Control From A Secondary Device
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PitBullCH-Secure_Partisia_Node_Setup/PitBullCH-Secure_Partisia_Node_Setup/" class="md-nav__link">
+        Secure Partisia Node Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-diagram" class="md-nav__link">
+    Network Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-new-root-password" class="md-nav__link">
+    Set New Root Password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-emergency-window-critical" class="md-nav__link">
+    Open Emergency Window (Critical !!!)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-non-root-user" class="md-nav__link">
+    Set Up Non-Root User
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-ssh-for-secure-connections" class="md-nav__link">
+    Set Up SSH For Secure Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-ubuntu" class="md-nav__link">
+    Update Ubuntu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-ntp-network-time-protocol" class="md-nav__link">
+    Install NTP (Network Time Protocol)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-fail2ban" class="md-nav__link">
+    Install Fail2Ban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-firewall" class="md-nav__link">
+    Set Up The Firewall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-webmin" class="md-nav__link">
+    Install Webmin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-docker-docker-compose" class="md-nav__link">
+    Install Docker &amp; Docker-Compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-mail-utilities" class="md-nav__link">
+    Install Mail Utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-bashtop" class="md-nav__link">
+    Install Bashtop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-vps-maintenance-critical" class="md-nav__link">
+    Appendix A - VPS Maintenance (Critical !!!)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-vps-control-from-a-secondary-device" class="md-nav__link">
+    Appendix B - VPS Control From A Secondary Device
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="kruptos-nomisma-presents">Kruptos Nomisma presents...</h1>
+<p><img alt="" src="../images/VPS-CoverImage.png" /></p>
+<h2 id="introduction">Introduction</h2>
+<ol>
+<li>
+<p>First things first: I want to thank @jayjaynl for his original Secure LTO Network Node Setup Guide – my document is strongly based on his excellent original, with edits and additions of my own – you can find his original here:</p>
+<p><a href="">https://medium.com/@jayjaynl/extensive-guide-to-a-secure-lto-network-public-node-setup-33053a4370c8</a></p>
+</li>
+<li>
+<p>This guide assumes a few important things about your VPS:</p>
+<ul>
+<li>
+<p>You are using Contabo as your VPS provider – if using another provider there may be subtle differences in terms of what is or is not already installed !</p>
+</li>
+<li>
+<p>Instructions intended to be run on a certain platform will be preceded with the following words:</p>
+<ul>
+<li>
+<p><strong>On Mac</strong> - this is for running on Mac only</p>
+</li>
+<li>
+<p><strong>On Windows</strong> - this is for running on Windows only</p>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> - this is for running on Mac or Windows (as appropriate for your situation)</p>
+</li>
+<li>
+<p><strong>On VPS</strong> - this is for running on VPS only</p>
+</li>
+</ul>
+</li>
+<li>
+<p>You will access your VPS over a command-line terminal:</p>
+<ul>
+<li>
+<p><strong>On Mac</strong> this would be the default Terminal app, or better, the 3rd-party iTerm2 app</p>
+</li>
+<li>
+<p><strong>On Windows</strong> this would be the default Command Prompt or PowerShell, or perhaps, the 3rd-party Putty app</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For VPS recovery purposes you will need a VNC client – best to have that ready to go:</p>
+<ul>
+<li>
+<p><strong>On Mac</strong> you can enter the VNC URL into a browser and it will bring up the built-in Screen Sharing app</p>
+</li>
+<li>
+<p><strong>On Windows</strong> there is no built-in VNC client, get the 3rd-party UltraVNC app from <a href="">https://www.uvnc.com</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>This guide assumes a few important things about you and Linux:</p>
+<ul>
+<li>
+<p>You are using the Linux Ubuntu distro v20.04 (not earlier) – other distros will work, but there may be subtle differences which you will have to work out yourself !</p>
+</li>
+<li>
+<p>You may not have too much Unix / Linux experience and you may find some part of this guide a little daunting, but you are NOT afraid to make mistakes and start all over again, and you are NOT afraid to ask questions</p>
+</li>
+<li>
+<p>You should ideally be familiar with one of the usual Unix / Linux command-line editors – I have used <em>nano</em> in all examples as it is more intuitive and user friendly, but please feel free to use <em>vi</em> if you are more comfortable with that</p>
+</li>
+</ul>
+</li>
+<li>
+<p>A few important words on security:</p>
+<ul>
+<li>
+<p>Store your most critical &amp; private items relating to a blockchain node securely &amp; safely – preferably in a password manager (1Password, Bitwarden, KeePassXC all recommended) – means wallet private keys, login passwords (root and non-root) and SSH keys:</p>
+<ul>
+<li>
+<p>Store with them your node wallet address &amp; VPS IP address because you will need these - keeping them together makes it easier later</p>
+</li>
+<li>
+<p>Store the emergency VPS VNC IP address, username, and password from your VPS provider – you may need them if things go wrong</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SSH is critical for the security of your VPS - do not skip the setup of this</p>
+</li>
+</ul>
+</li>
+<li>
+<p>One final thing: although I am experienced on VPS setups, I do not consider myself an expert – there are thousands of people with more clue than I, and hundreds of similar VPS setup guides which are much more comprehensive than this – but this one does the job for me ;-)</p>
+</li>
+</ol>
+<p>Intro over – now let us get down to the good stuff, and in the words of the late, great Douglas Adams: <strong>Don’t Panic !</strong></p>
+<h2 id="network-diagram">Network Diagram</h2>
+<ol>
+<li>
+<p>Below attempts to show the relationship between your local device (Mac/Windows PC etc) and your VPS, what you will use to connect between them during normal everyday usage, and what to use during emergency usage when you have locked yourself out:</p>
+<p><img alt="" src="../images/VPS-NetworkDiagram.png" /></p>
+</li>
+</ol>
+<h2 id="set-new-root-password">Set New Root Password</h2>
+<ol>
+<li>
+<p><strong>On Mac/Windows</strong> for best security and safety, connect to your VPS (I will use VPS IP address <em>192.168.0.50</em> in my examples) and then change the VPS provider-assigned root password - first make the connection:</p>
+<div class="highlight"><pre><span></span><code>ssh 192.168.0.50 -l root
+</code></pre></div>
+<p><strong>On VPS</strong> <em>on very rare occasions</em> the VPS provider does not install the SSH server by default and the above ssh command will fail - means before you connect via SSH you need to connect to the VPS via VNC, then install the SSH server:</p>
+<div class="highlight"><pre><span></span><code>apt update
+apt install openssh-server
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then change the root password:</p>
+<div class="highlight"><pre><span></span><code>passwd root
+</code></pre></div>
+</li>
+</ol>
+<h2 id="open-emergency-window-critical">Open Emergency Window (Critical !!!)</h2>
+<ol>
+<li>
+<p><strong>On Mac/Windows</strong> now login to the VPS again <em>in a new (second) connection</em> using the new password to ensure that it is working - this avoids the situation where you change the password, close your connection, open a new one only to find you screwed up the password change somehow</p>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> remember to <em>open a new second connection to the VPS after every reboot</em></p>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> if you ever get locked out of your VPS and don’t have a second connection already open, you will need to connect to your VPS over VNC - refer to your VPS provider's VNC documentation for this</p>
+</li>
+</ol>
+<h2 id="set-up-non-root-user">Set Up Non-Root User</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> for best security you should not use <em>root</em> as your default user – far better to create a non-root user based on the project name e.g., <em>partisia</em> or your own name or nickname (I will use <em>yourUsername</em> in my examples):</p>
+<div class="highlight"><pre><span></span><code>adduser yourUsername
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> add your non-root user to the sudo users list (so you can later execute commands with root privileges via sudo), and allow it to access system logs:</p>
+<div class="highlight"><pre><span></span><code>usermod -aG sudo yourUsername
+usermod -aG systemd-journal yourUsername
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> now logout and reconnect, then check that the above commands worked - you should see those two groups included:</p>
+<div class="highlight"><pre><span></span><code>groups
+</code></pre></div>
+</li>
+</ol>
+<h2 id="set-up-ssh-for-secure-connections">Set Up SSH For Secure Connections</h2>
+<p><strong>EITHER</strong></p>
+<ol>
+<li>
+<p><strong>For Mac</strong></p>
+<ul>
+<li>
+<p><strong>On Mac</strong> (in <em>Terminal</em> or <em>iTerm2</em>) create your SSH public / private key-pair – accept all the defaults, and enter a secure passphrase:</p>
+<div class="highlight"><pre><span></span><code>cd
+ssh-keygen
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Mac</strong> display your key file, and copy it to the VPS:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd .ssh
+cat id_rsa.pub
+ssh-copy-id yourUsername@192.168.0.50
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> check that your key file is in place and display it:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd .ssh
+ls -al authorized_keys
+cat authorized_keys
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Mac</strong> and <strong>on VPS</strong> if you look at the two files, the content should be indentical.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>OR</strong></p>
+<ol>
+<li>
+<p><strong>For Windows</strong></p>
+<ul>
+<li>
+<p><strong>On Windows</strong> (in <em>Command Prompt</em> or <em>PowerShell</em>), create your SSH public / private key-pair – accept all the defaults, and enter a secure passphrase:</p>
+<div class="highlight"><pre><span></span><code>cd /d c:%HOMEPATH%
+ssh-keygen
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> create your .ssh directory:</p>
+<div class="highlight"><pre><span></span><code>cd
+mkdir .ssh
+chmod 700 .ssh
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Windows</strong> display your key file, and copy it to the VPS:</p>
+<div class="highlight"><pre><span></span><code>cd /d c:%HOMEPATH%
+type id_rsa.pub
+scp id_rsa.pub yourUsername@192.168.0.50:/home/yourUsername/.ssh/authorized_keys
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> check that your key file is in place and display it:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd .ssh
+ls -al authorized_keys
+cat authorized_keys
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Windows</strong> and <strong>on VPS</strong> if you look at the two files, the content should be indentical. </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> now connect to your VPS via SSH - this will need your new SSH passphrase:</p>
+<div class="highlight"><pre><span></span><code>ssh yourUsername@192.168.0.50
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> change configuration to disable normal password logins so that only SSH logins are allowed, and also change the SSH port for a little extra security (the port number should be in the range 1025-65535 – I will use <em>33333</em> in my examples) - first back up the SSH config file:</p>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.myback
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> edit the SSH config file:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/ssh/sshd_config
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> find and change the settings below in that file - if there is a comment character (#) in front of one, you need to remove it for the setting to be able to take effect:</p>
+<div class="highlight"><pre><span></span><code>Port 33333
+PermitRootLogin no
+MaxAuthTries 3
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication no
+PermitEmptyPasswords no
+AllowAgentForwarding no
+AllowTcpForwarding no
+X11Forwarding no
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> test the SSH configuration file for errors – fix any that are shown, continue testing and fixing until all clear – once it reports nothing back, all is good:</p>
+<div class="highlight"><pre><span></span><code>sudo sshd -t
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> restart the SSH service for the new configuration to take effect:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart ssh
+sudo systemctl status ssh
+</code></pre></div>
+<p><strong>On VPS</strong> hit <span class="keys"><kbd class="key-q">Q</kbd></span> or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to terminate the above command (if needed)</p>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> now connect again to your VPS via SSH - this time it will need both the new port number and your SSH passphrase:</p>
+<div class="highlight"><pre><span></span><code>ssh -p 33333 yourUsername@192.168.0.50
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> <em>only If this SSH configuration goes wrong</em> then copy your backup config file back into place and restart the SSH service again:</p>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/ssh/sshd_config.myback /etc/ssh/sshd_config
+sudo systemctl restart ssh
+</code></pre></div>
+<p><strong>On VPS</strong> hit <span class="keys"><kbd class="key-q">Q</kbd></span> or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to terminate the above command (if needed)</p>
+</li>
+</ol>
+<h2 id="update-ubuntu">Update Ubuntu</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> update the master package list, then upgrade to all latest listed packages, reboot, and re-connect to your VPS:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt upgrade
+sudo reboot
+</code></pre></div>
+</li>
+</ol>
+<h2 id="install-ntp-network-time-protocol">Install NTP (Network Time Protocol)</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> blockchain nodes are usually incredibly sensitive to time drift so this is critical to configure – first install the NTP package itself (you may find it is already installed):</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install ntp ntpdate
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then stop the NTP service, point it towards a valid NTP server, and restart the service:</p>
+<div class="highlight"><pre><span></span><code>sudo service ntp stop
+sudo ntpdate pool.ntp.org
+sudo service ntp start
+sudo systemctl status ntp
+</code></pre></div>
+<p><strong>On VPS</strong> hit <span class="keys"><kbd class="key-q">Q</kbd></span> or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to terminate the above command (if needed)</p>
+</li>
+</ol>
+<h2 id="install-fail2ban">Install Fail2Ban</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> Fail2Ban is used to block repeated incoming connection attempts, which are usually a sign of a malicious attack - first install the Fail2Ban package itself:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then back up the Fail2Ban config file:</p>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/fail2ban/jail.local /etc/fail2ban/jail.myback
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then edit the Fail2Ban config file:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/fail2ban/jail.local
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> replace every line containing “<em>port = ssh</em>” with “<em>port = 33333</em>” (the port number you defined for SSH earlier) - normally there are 3 such entries:</p>
+<div class="highlight"><pre><span></span><code>[sshd]
+port    = 33333
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+
+[dropbear]
+Port     = 33333
+logpath  = %(dropbear_log)s
+backend  = %(dropbear_backend)s
+
+[selinux-ssh]
+port     = 33333
+logpath  = %(auditd_log)s
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> then start the Fail2Ban service for this to actually take effect:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl enable fail2ban
+sudo service fail2ban start
+sudo systemctl status fail2ban
+</code></pre></div>
+<p><strong>On VPS</strong> hit <span class="keys"><kbd class="key-q">Q</kbd></span> or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to terminate the above command (if needed)</p>
+</li>
+<li>
+<p><strong>On VPS</strong> <em>only If this Fail2Ban configuration goes wrong</em> then copy your backup config file back into place and stop the Fail2Ban service:</p>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/fail2ban/jail.myback /etc/fail2ban/jail.local
+sudo service fail2ban stop
+sudo systemctl status fail2ban
+</code></pre></div>
+<p><strong>On VPS</strong> hit <span class="keys"><kbd class="key-q">Q</kbd></span> or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to terminate the above command (if needed)</p>
+</li>
+</ol>
+<h2 id="set-up-the-firewall">Set Up The Firewall</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> the Uncomplicated Firewall (UFW) is used to stop / block incoming potentially malicious traffic - as a baseline block all the incoming ports, then allow traffic on specific ports for SSH (ports 22, 33333), VNC (port 5900), and Webmin (port 10000) connections:</p>
+<div class="highlight"><pre><span></span><code>sudo ufw disable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22
+sudo ufw allow 33333
+sudo ufw allow 5900
+sudo ufw allow 10000
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> re-enable the firewall and firewall logging and check the firewall status:</p>
+<div class="highlight"><pre><span></span><code>sudo ufw logging on
+sudo ufw enable
+sudo ufw status
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> my output from that last command looks like this:</p>
+<p><img alt="" src="../images/VPS-Firewall.png" /></p>
+<p><em>Note: you can ignore port 80 in the above for now - this is because I have that port open for something else</em></p>
+</li>
+</ol>
+<h2 id="install-webmin">Install Webmin</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> Webmin is an excellent web-based administration and monitoring tool - first install the packages and certificates required for installing Webmin, and add the Webmin repository:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update 
+sudo apt install gpg-agent apt-transport-https software-properties-common
+wget -qO - http://www.webmin.com/jcameron-key.asc | sudo apt-key add
+</code></pre></div>
+<p><em>Note: in the "wget" command above, that is a capital letter O, not a zero</em></p>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository &quot;deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib&quot;
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> update the package repository, then install the Webmin package itself, and check it is running (it normally starts automatically after installation):</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install webmin
+sudo systemctl status webmin
+</code></pre></div>
+<p><strong>On VPS</strong> hit <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> to terminate the above command (if needed)</p>
+<p><strong>On VPS</strong> <em>on Ubuntu 21.04 onwards</em> Webmin is started a different way:</p>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/webmin restart
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> to access Webmin, open your browser and enter this URL (<em>yourHost.yourProvider.com</em> is your VPS' fully-qualified domain name, <em>10000</em> is the default Webmin port):</p>
+<p><a href="">https://yourHostname.yourProvider.com:10000</a></p>
+<p>Or you can use the VPS IP address instead:</p>
+<p><a href="">https:// 192.168.0.50:10000</a></p>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> login with your non-root user and password – if you need some help with Webmin, you can find that here:</p>
+<p><a href="">https://www.webmin.com/docs.html</a></p>
+<p><a href="">https://www.webmin.com/faq.html</a></p>
+</li>
+<li>
+<p><strong>On Mac/Windows</strong> as you can see below, I need to do some updating !</p>
+<p><img alt="" src="../images/VPS-Webmin.png" /></p>
+</li>
+</ol>
+<h2 id="install-docker-docker-compose">Install Docker &amp; Docker-Compose</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> Docker is a container technology used to run software such as the Partisia node in a secure pre-configured environment – first install the packages and certificates required for installing Docker, and add the Docker repository:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list  &gt; /dev/null
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> update the package repository, then install the Docker package itself:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> install the Docker Compose package, then ensure it is executable, and reachable from the normal directory:</p>
+<div class="highlight"><pre><span></span><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> add the docker group (it may already be added - in which case ignore the error), then add your non-root user to that group:</p>
+<div class="highlight"><pre><span></span><code>sudo groupadd docker
+sudo usermod -aG docker yourUsername
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> now log out and re-connect to your VPS for the above to take effect, then check your groups and test the docker installations:</p>
+<div class="highlight"><pre><span></span><code>docker run hello-world
+docker-compose -version
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> my output from those last three commands looks like this:</p>
+<p><img alt="" src="../images/VPS-Docker.png" /></p>
+</li>
+</ol>
+<h2 id="install-mail-utilities">Install Mail Utilities</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> it’s potentially very useful to be able to be able to send emails for warnings etc – first install the mailutils package itself:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install mailutils sendmail
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> with pre-20.xx versions of Ubuntu you will get a pop-up screen asking you to select the General type of mail configuration - select Internet Site and hit Return:</p>
+<p><img alt="" src="../images/VPS-Mail1.png" /></p>
+<p>You will then be asked to enter your System mail name – just accept the default and hit Return:</p>
+<p><img alt="" src="../images/VPS-Mail2.png" /></p>
+</li>
+<li>
+<p><strong>On VPS</strong> test the installation by sending a mail - this should result in an email being sent to your email address, the content being that of the <em>/etc/shells</em> file from your VPS:</p>
+<div class="highlight"><pre><span></span><code>mail -s &quot;testing my VPS&quot; yourEmailAddress &lt; /etc/shells
+</code></pre></div>
+<p><em>Note: some VPS providers do not allow email to be sent in the first 24 hours after a VPS is ordered, or in some cases you must contact the VPS Support team to request to be able to send emails - this is part of their process to stop spammers - means you may need to re-test this depending on your VPS provider</em></p>
+</li>
+</ol>
+<h2 id="install-bashtop">Install Bashtop</h2>
+<ol>
+<li>
+<p><strong>On VPS</strong> Bashtop is an excellent top alternative for checking system resources – first install the packages and certificates required for installing Bashtop:</p>
+<div class="highlight"><pre><span></span><code>wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add
+</code></pre></div>
+<p><em>Note: in the "wget" command above, that is a capital letter O, not a zero</em></p>
+<div class="highlight"><pre><span></span><code>echo &quot;deb http://packages.azlux.fr/debian/ buster main&quot; | sudo tee /etc/apt/sources.list.d/azlux.list
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> update the package repository, then install the Bashtop package itself and run it:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install bashtop
+bashtop
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> my Bashtop output looks like this:</p>
+<p><img alt="" src="../images/VPS-Bashtop.png" /></p>
+</li>
+</ol>
+<h2 id="appendix-a-vps-maintenance-critical">Appendix A - VPS Maintenance (Critical !!!)</h2>
+<ol>
+<li>
+<p>I’m not going to add much here – main thing to do is to ensure your Ubuntu packages are up to date – I would strongly advise you do this on a regular basis, perhaps schedule a regular 30-minute slot every week or two. There are two main ways to do this:</p>
+<ul>
+<li>
+<p><strong>On Mac/Windows</strong> via WebMin on the main dashboard page it will tell you how many packages are out of date, click on that list and it’ll take you to an update screen</p>
+</li>
+<li>
+<p><strong>On VPS</strong> via the command line – you may or may not need to reboot (usually only if there is a kernel update)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>keep an eye out on your disk space usage, especially if you are renting a VPS with a relatively small SSD. Again there are two main ways to do this:</p>
+<ul>
+<li>
+<p><strong>On Mac/Windows</strong> via WebMin on the main dashboard page at the bottom is the Disk Usage section - I would advice to keep this permanently open so you can always see the current usage - my usage looks like this:       </p>
+<p><img alt="" src="../images/VPS-DiskUsage1.png" /></p>
+</li>
+<li>
+<p><strong>On VPS</strong> you will see a more complex output using the following:</p>
+<div class="highlight"><pre><span></span><code>df -h
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> Depending on the disk partition layout you have, you need to watch out for "/" (the root filesystem) and possibly also "/boot" (if you only have that as a separate partition) - my usage looks like this:</p>
+<p><img alt="" src="../images/VPS-DiskUsage2.png" /></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="appendix-b-vps-control-from-a-secondary-device">Appendix B - VPS Control From A Secondary Device</h2>
+<p>If you want to be able to control your VPS from a secondary device (Mac or Windows PC) in case of issues with your primary device, or maybe because you are travelling with a secondary device, you first need to set up access for that device.</p>
+<p>Now assuming you already set up access from your primary Mac/Windows desktop #1, and because you might be travelling, you also want to set up access from your secondary Mac/Windows laptop #2.</p>
+<ol>
+<li>
+<p><strong>On Mac/Windows #1</strong> as a safety precaution, open 2 connections from your primary device to your VPS</p>
+</li>
+<li>
+<p><strong>On Mac/Windows #2</strong> generate the new key pair (see section 6 of this guide)</p>
+</li>
+<li>
+<p><strong>On Mac/Windows #2</strong> find the newly generated public key file - it should be in the <em>.ssh </em>directory under your home directory, and will be called <em>id_rsa.pub</em> </p>
+</li>
+<li>
+<p><strong>On Mac/Windows #2</strong> you now need to get the contents of that file from your secondary device to the VPS</p>
+<ul>
+<li>
+<p>Easiest way is to copy it to a USB stick on the secondary device, then insert the USB stick into the primary device</p>
+</li>
+<li>
+<p>Other options including emailing it to yourself on your primary device, or copying it from the secondary device to a NAS or Dropbox account (if you have one) then copying from the NAS/Dropbox account to the primary device - but the USB stick is easiest</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>On Mac/Windows #1</strong> find the newly copied public key file and open it in a text editor (<em>TextEdit</em> on Mac, <em>Textpad</em> or <em>Wordpad</em> on Windows), highlight and copy the file contents into your copy/paste buffer (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-c">C</kbd></span> on Mac, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> on Windows)</p>
+</li>
+<li>
+<p><strong>On VPS</strong> via one of the connections opened in step #1 (above), edit the <em>authorized_keys</em> file:</p>
+<div class="highlight"><pre><span></span><code>cd
+cd .ssh
+nano authorized_keys
+</code></pre></div>
+</li>
+<li>
+<p><strong>On VPS</strong> go to the end of the file, paste (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-v">V</kbd></span> on Mac, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span> on Windows) your copy/paste buffer contents into the file, write and quit - then review the file to ensure it is correct - you should now see that new line at the end:</p>
+<div class="highlight"><pre><span></span><code>cat authorized_keys
+</code></pre></div>
+</li>
+<li>
+<p><strong>On Mac/Windows #2</strong> test a new connection to the VPS and ensure that it works</p>
+<div class="highlight"><pre><span></span><code>ssh yourUsername2@192.168.0.50
+</code></pre></div>
+<ul>
+<li>Note that you might be using a different username on the secondary device to the one you are using on the primary device - if you are not sure, look at the line you just added to the <em>authorized_keys</em> file on the VPS, the last part of the line will be <em>username2@hostname</em> where <em>username2</em> will be the username on that secondary device - that is what you use in the ssh command</li>
+</ul>
+</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="../../PitBullCH-Secure_Partisia_Node_Setup/PitBullCH-Secure_Partisia_Node_Setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Secure Partisia Node Setup" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Secure Partisia Node Setup
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      
+    
+  </body>
+</html>
